@@ -2,6 +2,7 @@ const colorChanger = document.querySelector(".dark-mode-btn");
 const prevButton = document.querySelector(".prev-question");
 const nextButton = document.querySelector(".next-question");
 const checkAnswers = document.querySelector(".check-answers");
+const redoQuiz = document.querySelector(".redo-quiz");
 let counterElement = document.querySelector(".counter");
 let checkboxVal = 0;
 let counter = 0;
@@ -9,64 +10,64 @@ let correctAnswers = 0;
 
 const quizDetails = [
   {
-    question: "q1",
-    answers: ["a1", "a2", "a3"],
-    correct: "a2",
+    question: "Hur stavas mitt namn? 🤔",
+    answers: ["Hazim", "Hazem", "Hasim"],
+    correct: "Hazem",
     type: "radio",
   },
   {
-    question: "q2",
-    answers: ["b1", "b2", "b3"],
-    correct: "b2",
+    question: "Hur lång är jag? 📏",
+    answers: ["170cm", "173cm", "175cm"],
+    correct: "173cm",
     type: "radio",
   },
   {
-    question: "q3",
-    answers: ["c1", "c2", "c3"],
-    correct: "c2",
+    question: "Vad brukar jag göra på fritiden? 🖥️",
+    answers: ["Datorspel", "Sport", "Fiska"],
+    correct: "Datorspel",
     type: "radio",
   },
   {
-    question: "q4",
-    answers: ["d1", "d2", "d3"],
-    correct: "d2",
+    question: "Hur många syskon har jag? 👪",
+    answers: ["2st", "1st", "4st"],
+    correct: "4st",
     type: "radio",
   },
   {
-    question: "q5",
-    answers: ["e1", "e2", "e3"],
-    correct: "e2",
+    question: "Vilken färg har mina skor? 👞",
+    answers: ["Svart", "Vit", "Orange"],
+    correct: "Vit",
     type: "radio",
   },
   {
-    question: "qc10",
-    answers: ["qca1", "qca2", "qca3"],
-    correct: ["qca1", "qca2"],
+    question: "Vilka är mina favorit frukter? 🍓🥝",
+    answers: ["Vattenmelon", "Banan", "Appelsin"],
+    correct: ["Vattenmelon", "Banan"],
     type: "checkbox",
     disclamer: "Detta är en flervalsfråga!",
   },
   {
-    question: "q6",
-    answers: ["f1", "f2", "f3"],
-    correct: "f2",
+    question: "Brukar jag äta frukost?",
+    answers: ["Ja", "Nej", "Ibland"],
+    correct: "Ibland",
     type: "radio",
   },
   {
-    question: "q7",
-    answers: ["g1", "g2", "g3"],
-    correct: "g2",
+    question: "Hur gammal är jag?",
+    answers: ["23", "24", "21"],
+    correct: "21",
     type: "radio",
   },
   {
-    question: "q8",
-    answers: ["h1", "h2", "h3"],
-    correct: "h2",
+    question: "Hur många språk kan jag?",
+    answers: ["2st", "3st", "5st"],
+    correct: "3st",
     type: "radio",
   },
   {
-    question: "q9",
-    answers: ["j1", "j2", "j3"],
-    correct: "j2",
+    question: "Vad är min favoritdryck?",
+    answers: ["Nocco", "Pepsi", "Cola"],
+    correct: "Nocco",
     type: "radio",
   },
 ];
@@ -205,13 +206,13 @@ function calculateGrade() {
     return (
       correctAnswers++,
       (document.querySelector(".correct-ammount").innerHTML =
-        correctAnswers + "rätt"),
+        correctAnswers + " / 10 rätt"),
       showGrade()
     );
   }
   showGrade();
   document.querySelector(".correct-ammount").innerHTML =
-    correctAnswers + "rätt";
+    correctAnswers + " / 10 rätt";
   console.log(correctAnswers);
 }
 
@@ -229,6 +230,31 @@ function toggleMode() {
 
 function showGrade() {
   document.querySelector(".quiz-container").classList.add("hidden");
+  document.querySelector(".grade-on-quiz-container").classList.remove("hidden");
+  if (correctAnswers < 5 && correctAnswers < 8) {
+    document.querySelector(".correct-ammount").classList.add("red");
+  } else if (correctAnswers >= 5 && correctAnswers < 7) {
+    document.querySelector(".correct-ammount").classList.add("orange");
+  } else if (correctAnswers >= 8) {
+    document.querySelector(".correct-ammount").classList.add("green");
+  }
+}
+redoQuiz.addEventListener("click", (event) => {
+  resetQuiz();
+});
+function resetQuiz() {
+  checkboxVal = 0;
+  counter = 0;
+  correctAnswers = 0;
+
+  nextButton.classList.toggle("hidden"),
+    checkAnswers.classList.toggle("hidden");
+  updateQuiz();
+  document.querySelector(".correct-ammount").classList.remove("green");
+  document.querySelector(".correct-ammount").classList.remove("orange");
+  document.querySelector(".correct-ammount").classList.remove("red");
+  document.querySelector(".quiz-container").classList.remove("hidden");
+  document.querySelector(".grade-on-quiz-container").classList.add("hidden");
 }
 
 updateQuiz();
