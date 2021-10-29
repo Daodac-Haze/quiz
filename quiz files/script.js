@@ -43,6 +43,7 @@ const quizDetails = [
     answers: ["qca1", "qca2", "qca3"],
     correct: ["qca1", "qca2"],
     type: "checkbox",
+    disclamer: "Detta är en flervalsfråga!",
   },
   {
     question: "q6",
@@ -177,6 +178,7 @@ function updateQuiz() {
   } else {
     const currentQuizQuestion = `<div class="quiz-question">
     <h2 class="quiz-question-title">${quizQuestion.question}</h2>
+    <h3 class="quiz-question-disclamer">${quizQuestion.disclamer}</h3>
   </div>`;
     quizContainer.insertAdjacentHTML("beforeend", currentQuizQuestion);
 
