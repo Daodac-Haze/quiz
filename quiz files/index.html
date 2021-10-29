@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Hazems Quiz</title>
+  </head>
+  <body class="dark-mode-selector">
+    <div class="dark-mode-btn">
+      <img
+        class="moon-image"
+        id="imageSelector"
+        src="/images/moon.png"
+        width="30"
+        height="30"
+      />
+    </div>
+    <div class="quiz-container dark-mode-selector">
+      <div class="counter">1/10</div>
+      <div class="quiz-details"></div>
+      <div class="answer-container">
+        <div class="quiz-answers-container"></div>
+      </div>
+      <div class="next-and-prev">
+        <div class="prev-quiz quiz-btn prev-question">
+          <img
+            class="arrow dark-mode-selector"
+            src="/images/left.png"
+            width="25"
+            height="25"
+          />Förra frågan
+        </div>
+        <div class="next-quiz quiz-btn next-question">
+          Nästa fråga<img
+            class="arrow dark-mode-selector"
+            src="/images/right.png"
+            width="25"
+            height="25"
+          />
+        </div>
+        <div class="check-answers quiz-btn hidden">
+          Check answers<img
+            class="arrow dark-mode-selector"
+            src="/images/right.png"
+            width="25"
+            height="25"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="grade-on-quiz-container hidden">
+      <div class="correct-ammount"></div>
+      <div class="redo-quiz dark-mode-selector">Gör om quizzet!</div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

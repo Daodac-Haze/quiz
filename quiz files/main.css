@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.moon-image {
+  width: 30px;
+  display: block;
+}
+label {
+  margin-right: 15px;
+}
+.dark-mode-btn {
+  user-select: none;
+  padding: 10px;
+  background-color: #f3f3f3;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body {
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  height: 98vh;
+  align-items: center;
+}
+.quiz-question-disclamer {
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+.redo-quiz {
+  padding: 5px 10px 5px 10px;
+  background-color: #f8f8f8;
+  border-radius: 2px;
+  box-shadow: rgb(0 0 0 / 7%) 0px 1px 2px, rgb(0 0 0 / 7%) 0px 2px 4px,
+    rgb(0 0 0 / 7%) 0px 4px 8px, rgb(0 0 0 / 7%) 0px 8px 16px,
+    rgb(0 0 0 / 7%) 0px 16px 32px, rgb(0 0 0 / 7%) 0px 32px 64px;
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 47px;
+  cursor: pointer;
+  user-select: none;
+}
+.arrow {
+  width: 25px;
+}
+.quiz-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next-and-prev {
+  display: flex;
+  justify-content: space-between;
+}
+.answer-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.quiz-details {
+  text-align: center;
+}
+.counter {
+  text-align: right;
+}
+.quiz-question-title {
+  margin-bottom: 10px;
+}
+.quiz-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px 25px 25px;
+  background-color: #f8f8f8;
+  box-shadow: rgb(0 0 0 / 7%) 0px 1px 2px, rgb(0 0 0 / 7%) 0px 2px 4px,
+    rgb(0 0 0 / 7%) 0px 4px 8px, rgb(0 0 0 / 7%) 0px 8px 16px,
+    rgb(0 0 0 / 7%) 0px 16px 32px, rgb(0 0 0 / 7%) 0px 32px 64px;
+}
+
+.hidden {
+  display: none;
+}
+
+.dark-colors {
+  color: white;
+  background-color: #403e3e;
+}
+.correct-ammount {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+img.dark-colors {
+  filter: invert(1);
+  background-color: transparent;
+}
+
+.red {
+  color: red;
+}
+.orange {
+  color: orange;
+}
+.green {
+  color: green;
+}
