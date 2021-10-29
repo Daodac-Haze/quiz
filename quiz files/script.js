@@ -108,10 +108,8 @@ nextButton.addEventListener("click", (event) => {
     } else {
       userAnswer.forEach(function callbackFn(items, index) {
         if (items === quizDetails[counter].correct[index]) {
-          console.log(items, quizDetails[counter].correct[index]);
           checkboxVal++;
         } else {
-          console.log(items, quizDetails[counter].correct[index]);
           checkboxVal--;
         }
       });
@@ -124,9 +122,6 @@ nextButton.addEventListener("click", (event) => {
         updateQuiz();
       }
     }
-    console.log(userAnswer, quizDetails[counter].correct);
-
-    console.log("checkbox");
   } else {
     if (
       document.querySelector('input[name="quizAnswer"]:checked').value ===
@@ -149,7 +144,6 @@ nextButton.addEventListener("click", (event) => {
 });
 
 function updateQuiz() {
-  console.log(correctAnswers);
   if (counter > 9) {
     return (counterElement.innerHTML = counter + "/10");
   }
@@ -213,7 +207,6 @@ function calculateGrade() {
   showGrade();
   document.querySelector(".correct-ammount").innerHTML =
     correctAnswers + " / 10 rätt";
-  console.log(correctAnswers);
 }
 
 function toggleMode() {
